@@ -12,7 +12,14 @@
         const incbutton = document.querySelector("#inc");
         const heading = document.querySelector("#heading");
         const resetbutton = document.querySelector("#reset");
-        incbutton.addEventListener("click")
+        incbutton.addEventListener("click", () =>{
+            score ++;
+            heading.textContent = `Score: ${score}`;
+            });
+        resetbutton.addEventListener("click",()=>{
+            score =0;
+            heading.textContent = `Score: ${score}`;
+        });
     </script>
 </head>
 <body>
