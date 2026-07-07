@@ -9,3 +9,13 @@ let result = [1, 2, 3, 4, 5, 6]
   .map(n => n * 2);            
 
 console.log(result); 
+//map dictionaty
+let map = new Map();
+map.set("Hehe", "Dipayan");
+map.set("I duno","how to sleep");
+map.set("1230","456");
+console.log(map.get("1230"));
+
+for (let [key, value] of map) {
+  console.log(key, "→", value);
+}
