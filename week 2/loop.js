@@ -35,3 +35,16 @@ console.log(myset.delete(1));
 //destrcuturing
 let [first, , , third] = [10, 20, 30,40];
 console.log(first +"and"+third)
+let [head, ...tail] = [1, 2, 3, 4];
+console.log(head + "ok"+tail)
+let person = { name: "Aryan", age: 21, city: "Kolkata" };
+let { name, age } = person;
+console.log(name); // "Aryan"
+console.log(age);  // 21
+//functions
+function greet({ name, age }) {
+  console.log(`Hi ${name}, you are ${age} years old.`);
+}
+
+greet({ name: "Aryan", age: 21, city: "Kolkata" });
+// Hi Aryan, you are 21 years old.
