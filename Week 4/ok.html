@@ -9,25 +9,16 @@
 </head>
 <body>
     <div id="app">
-        <p>{{lastVisitor}} said {{ message }}</p>
-
+        <p>{{ message }}</p>
         <label>
-            Your name:
-            
+            Your name:            
             <input type="text" v-model="visitorName">
         </label>
-
         <p v-if="count === 0">No replies beta</p>
-        <p v-else-if="count >= 5">You are very popular</p>
-        
+        <p v-else-if="count >= 5">You are very popular</p>        
         <p v-else>Its ok no problem</p>
-
-        <p>Number of replies: {{ count }}</p>
-
-        
-        <button v-on:click="sayHi">Say Hi!</button>
-
-        
+        <p>Number of replies: {{ count }}</p>        
+        <button v-on:click="sayHi">Say Hi!</button>        
         <p v-if="lastVisitor">
             {{ lastVisitor }} said hi
         </p>
