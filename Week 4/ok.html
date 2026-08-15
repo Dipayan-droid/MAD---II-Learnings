@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Reply application</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{lastVisitor}} said {{ message }}</p>
+
+        <label>
+            Your name:
+            
+            <input type="text" v-model="visitorName">
+        </label>
+
+        <p v-if="count === 0">No replies beta</p>
+        <p v-else-if="count >= 5">You are very popular</p>
+        
+        <p v-else>Its ok no problem</p>
+
+        <p>Number of replies: {{ count }}</p>
+
+        
+        <button v-on:click="sayHi">Say Hi!</button>
+
+        
+        <p v-if="lastVisitor">
+            {{ lastVisitor }} said hi
+        </p>
+    </div>
+    
+    
+    <script src="application.js"></script>
+</body>
+</html>
