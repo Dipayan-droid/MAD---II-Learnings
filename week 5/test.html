@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Message Board App</title>
+    <!-- Import Vue 2 from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 10px; }
+        label { display: inline-block; width: 120px; font-weight: bold; }
+        input { padding: 5px; width: 200px; }
+        button { padding: 5px 15px; margin-top: 10px; cursor: pointer; }
+        .summary { background: #eef; padding: 10px; margin-bottom: 20px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- This is the root element where the main Vue instance will mount -->
+    <div id="app">
+        
+        <div class="summary">
+            <h2>Dashboard Overview</h2>
+            <!-- Displays the data property from the Root Vue instance -->
+            <p>Total messages sent across all boards: <strong>{{ grand_total }}</strong></p>
+        </div>
+
+        <hr>
+
+        <!-- 
+          Using our custom component. 
+          1. 'title' is passed in as a static prop.
+          2. 'v-on:add-to-grand-total' listens for the $emit from the child component.
+             When heard, it triggers the 'add_grand_total' method on the Root Vue instance.
+        -->
+        <message-board 
+            title="General Feedback"
+            v-on:add-to-grand-total="add_grand_total">
+        </message-board>
+
+        <!-- You can reuse the component as many times as you want! -->
+        <message-board 
+            title="Technical Support"
+            v-on:add-to-grand-total="add_grand_total">
+        </message-board>
+
+    </div>
+
+    <!-- Import our custom JavaScript logic AFTER the DOM elements exist -->
+    <script src="application.js"></script>
+</body>
+</html>
